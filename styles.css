@@ -1,11 +1,9 @@
 :root {
-  --color-primary: #00997a;
-  --color-primary-light: #a2dfc7;
-  --color-bg-about: #e0ebe8;
-  --color-bg-projects: #88deca;
-  --color-bg-skills: #4db19a;
-  --color-bg-contact: #439c86;
-  --color-text: rgb(16, 60, 47);
+  --color-primary: #0e6f5d;
+  --color-primary-light: #1fab89;
+  --color-accent: #62d2a2;
+  --color-background: #d7fbe8;
+  --color-text: #0e6f5d;
   --border-width: 7px;
   --transition-duration: 0.5s;
 }
@@ -36,20 +34,20 @@ h4 {
 
 h4 > a {
   text-decoration: none;
-  color: black;
+  color: var(--color-primary);
 }
 
 /* Navigation Links */
 h3 > a {
   font-size: 1.5em;
   position: relative;
-  color: #000;
+  color: var(--color-primary);
   text-decoration: none;
   padding: 1em;
 }
 
 h3 > a:hover {
-  color: #000;
+  color: var(--color-primary);
 }
 
 h3 > a:before {
@@ -59,7 +57,7 @@ h3 > a:before {
   height: 5px;
   bottom: 0;
   left: 0;
-  background-color: #24e1b6;
+  background-color: var(--color-accent);
   visibility: hidden;
   transform: scaleX(0);
   transition: all var(--transition-duration) ease-in-out;
@@ -74,30 +72,38 @@ h3 > a:hover:before {
 #first {
   width: 100vw;
   height: 100vh;
+  background-color: var(--color-background);
 }
 
 #second {
   width: 100vw;
   height: 100vh;
-  background: var(--color-bg-about);
+  background: var(--color-background);
 }
 
 #third {
   width: 100vw;
   height: 125vh;
-  background: var(--color-bg-projects);
+  background: var(--color-primary-light);
 }
 
 #fourth {
   width: 100vw;
   height: 60vh;
-  background: var(--color-bg-skills);
+  background: var(--color-accent);
 }
 
 #fifth {
   width: 100vw;
   height: 50vh;
-  background: var(--color-bg-contact);
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+#fifth h1,
+#fifth h4,
+#fifth a {
+  color: var(--color-background);
 }
 
 /* Header */
@@ -128,7 +134,7 @@ h3 > a:hover:before {
   width: 100%;
   height: 100%;
   border: none;
-  border-top: var(--border-width) solid var(--color-primary-light);
+  border-top: var(--border-width) solid var(--color-accent);
   border-bottom: var(--border-width) solid var(--color-primary);
   box-sizing: border-box;
   transform: scaleX(0);
@@ -148,7 +154,7 @@ h3 > a:hover:before {
   height: 100%;
   border: none;
   border-right: var(--border-width) solid var(--color-primary);
-  border-left: var(--border-width) solid var(--color-primary-light);
+  border-left: var(--border-width) solid var(--color-accent);
   box-sizing: border-box;
   transform: scaleY(0);
   transition: var(--transition-duration);
@@ -169,6 +175,7 @@ h3 > a:hover:before {
   font-size: 3em;
   text-transform: uppercase;
   z-index: 1;
+  color: var(--color-primary);
 }
 
 /* About Section */
@@ -183,6 +190,7 @@ h3 > a:hover:before {
   line-height: 1.5em;
   text-align: center;
   position: relative;
+  color: var(--color-primary);
 }
 
 .pic {
@@ -215,12 +223,16 @@ h3 > a:hover:before {
   padding: 1em;
 }
 
+#project h2 {
+  color: var(--color-primary);
+}
+
 .shots {
   margin: 0 auto;
   width: 20em;
   height: 16em;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(14, 111, 93, 0.2);
   transition: transform var(--transition-duration);
 }
 
@@ -242,6 +254,9 @@ h3 > a:hover:before {
   height: 7em;
   margin: 0.5em;
   transition: transform var(--transition-duration);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 0.5em;
 }
 
 #align img:hover {
@@ -255,7 +270,7 @@ h3 > a:hover:before {
 }
 
 #icons a {
-  color: black;
+  color: var(--color-background);
   font-size: 4em;
   margin: 1em;
   transition: transform var(--transition-duration);
