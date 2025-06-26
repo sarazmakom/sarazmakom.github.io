@@ -1,19 +1,12 @@
-// Smooth scroll functionality
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (event) {
+$('a[href^="#"]').on("click", function (event) {
+  var target = $(this.getAttribute("href"));
+  if (target.length) {
     event.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-
-    if (target) {
-      const headerOffset = 0;
-      const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  });
+    $("html, body").stop().animate(
+      {
+        scrollTop: target.offset().top,
+      },
+      2000
+    );
+  }
 });
